@@ -1,5 +1,8 @@
+.vs
 .vscode
+.vsconfig
 .ignore
+*.sln
 
 Binaries
 Build
