@@ -19,9 +19,9 @@ AAuraCharacter::AAuraCharacter()
 }
 
 // For Server
-void AAuraCharacter::PossessedBy(AController* Controller)
+void AAuraCharacter::PossessedBy(AController* NewController)
 {
-	Super::PossessedBy(Controller);
+	Super::PossessedBy(NewController);
 
 	InitAbilityActorInfo();
 }
