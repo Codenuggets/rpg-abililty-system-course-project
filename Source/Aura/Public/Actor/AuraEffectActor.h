@@ -32,4 +32,7 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<UStaticMeshComponent> Mesh;
+
+	UPROPERTY(EditAnywhere, Category = "Potion Type")
+	bool IsHealthPotion = true;
 };
