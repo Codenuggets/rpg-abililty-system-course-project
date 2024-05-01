@@ -6,6 +6,8 @@
 #include "Character/AuraCharacterBase.h"
 #include "AuraCharacter.generated.h"
 
+class AAuraPlayerState;
+
 /**
  * 
  */
@@ -22,5 +24,8 @@ public:
 
 private:
 	void InitAbilityActorInfo();
+	void InitOverlay();
+
+	TObjectPtr<AAuraPlayerState> AuraPlayerState;
 	
 };
