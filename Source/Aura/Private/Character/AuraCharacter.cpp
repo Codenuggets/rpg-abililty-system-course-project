@@ -39,6 +39,13 @@ void AAuraCharacter::OnRep_PlayerState()
 	InitOverlay();
 }
 
+int32 AAuraCharacter::GetPlayerLevel()
+{
+	AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+	check(AuraPlayerState);
+	return AuraPlayerState->GetPlayerLevel();
+}
+
 void AAuraCharacter::InitAbilityActorInfo()
 {
 	AuraPlayerState = GetPlayerState<AAuraPlayerState>();
@@ -47,6 +54,8 @@ void AAuraCharacter::InitAbilityActorInfo()
 	Cast<UAuraAbilitySystemComponent>(AuraPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 	AbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();
 	AttributeSet = AuraPlayerState->GetAttributeSet();
+
+	InitializeDefaultAttributes();
 }
 
 void AAuraCharacter::InitOverlay()
