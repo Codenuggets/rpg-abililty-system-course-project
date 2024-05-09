@@ -27,6 +27,7 @@ void AAuraCharacter::PossessedBy(AController* NewController)
 
 	InitAbilityActorInfo();
 	InitOverlay();
+	AddCharacterAbilities();
 }
 
 
