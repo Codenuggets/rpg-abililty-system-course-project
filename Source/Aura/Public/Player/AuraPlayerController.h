@@ -10,6 +10,7 @@
 class IHighlightInterface;
 class UAuraAbilitySystemComponent;
 class UAuraInputConfig;
+class UDamageTextComponent;
 class UInputMappingContext;
 class UInputAction;
 class USplineComponent;
@@ -29,6 +30,8 @@ public:
 	AAuraPlayerController();
 	virtual void PlayerTick(float DeltaTime) override;
 
+	UFUNCTION(Client, Reliable)
+	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter);
 
 protected:
 	virtual void BeginPlay() override;
@@ -80,6 +83,10 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<USplineComponent> Spline;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UDamageTextComponent> DamageTextComponentClass;
+
 
 	void AutoRun();
 
