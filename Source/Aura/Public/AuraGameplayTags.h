@@ -40,6 +40,13 @@ public:
 	FGameplayTag InputTag_3;
 	FGameplayTag InputTag_4;
 
+	/*
+	*  Combat
+	*/
+
+	FGameplayTag Combat_Damage;
+	FGameplayTag Combat_HitReact;
+
 protected:
 
 private:
