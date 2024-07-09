@@ -44,8 +44,20 @@ public:
 	*  Combat
 	*/
 
-	FGameplayTag Combat_Damage;
 	FGameplayTag Combat_HitReact;
+
+	FGameplayTag Combat_Damage;
+	FGameplayTag Combat_Damage_Physical;
+	FGameplayTag Combat_Damage_Fire;
+	FGameplayTag Combat_Damage_Lighting;
+	FGameplayTag Combat_Damage_Arcane;
+
+	FGameplayTag Combat_DamageResistance_Physical;
+	FGameplayTag Combat_DamageResistance_Fire;
+	FGameplayTag Combat_DamageResistance_Lighting;
+	FGameplayTag Combat_DamageResistance_Arcane;
+
+	TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
 
 protected:
 
