@@ -38,7 +38,36 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.InputTag_4 = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("InputTag.4"), FString("Input Tag for 4 Key"));
 
 	// Combat
-	GameplayTags.Combat_Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.Damage"), FString("Damage"));
 	GameplayTags.Combat_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.HitReact"), FString("Reacting to Damage"));
+
+	/*
+	* Damage Types
+	*/
+
+	GameplayTags.Combat_Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.Damage"), FString("Damage"));
+
+	GameplayTags.Combat_Damage_Physical = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.Damage.Physical"), FString("Physical Damage Type"));
+	GameplayTags.Combat_Damage_Fire = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.Damage.Fire"), FString("Fire Damage Type"));
+	GameplayTags.Combat_Damage_Lighting = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.Damage.Lighting"), FString("Lighting Damage Type"));
+	GameplayTags.Combat_Damage_Arcane = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.Damage.Arcane"), FString("Arcane Damage Type"));
+
+	/*
+	* Damage Resistances
+	*/
+
+	GameplayTags.Combat_DamageResistance_Physical = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.DamageResistance.Physical"), FString("Resistance to Physical Damage"));
+	GameplayTags.Combat_DamageResistance_Fire = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.DamageResistance.Fire"), FString("Resistance to Fire Damage"));
+	GameplayTags.Combat_DamageResistance_Lighting = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.DamageResistance.Lighting"), FString("Resistance to Lighting Damage"));
+	GameplayTags.Combat_DamageResistance_Arcane = UGameplayTagsManager::Get().AddNativeGameplayTag(FName("Combat.DamageResistance.Arcane"), FString("Resistance to Arcane Damage"));
+
+	/*
+	* Map of Damage Types to Resistances
+	*/
+
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Combat_Damage_Physical, GameplayTags.Combat_DamageResistance_Physical);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Combat_Damage_Fire, GameplayTags.Combat_DamageResistance_Fire);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Combat_Damage_Lighting, GameplayTags.Combat_DamageResistance_Lighting);
+	GameplayTags.DamageTypesToResistances.Add(GameplayTags.Combat_Damage_Arcane, GameplayTags.Combat_DamageResistance_Arcane);
+
 
 }
